@@ -1323,12 +1323,12 @@
                         </div>
                     </div>
 
-                    <form class="newsletter-form-card" id="newsletter-form" action="index.php" method="post">
+                    <form class="newsletter-form-card" id="newsletter-form" onsubmit="return false;">
                         <label for="newsletter-contact">Email or Phone Number</label>
                         <input id="newsletter-contact" type="text" name="contact"
                             placeholder="you@example.com or digits only" autocomplete="email" inputmode="text"
                             required>
-                        <button class="newsletter-button" type="submit">Verify & Enter</button>
+                        <button class="newsletter-button" type="submit">Verify &amp; Enter</button>
                         <button type="button" class="newsletter-section-close" id="newsletter-close" aria-label="Close">&times;</button>
                         <div class="newsletter-response" id="newsletter-response" aria-live="polite">
                             <span id="newsletter-response-text"></span>
@@ -1360,10 +1360,10 @@
         const newsletterSection = document.getElementById('subscribe');
         const newsletterResponseText = document.getElementById('newsletter-response-text');
         const contactInput = document.getElementById('newsletter-contact');
+        const downloadUrlField = document.getElementById('download-url-field');
         const form = document.getElementById('newsletter-form');
         const newsletterClose = document.getElementById('newsletter-close');
         let pendingDownloadUrl = null;
-        const backendUrl = 'index.php';
         
         // Check if user has already authenticated
         const isAuthenticated = localStorage.getItem('onestate_authenticated');
@@ -1371,60 +1371,42 @@
             newsletterSection.classList.add('is-hidden');
         }
         
-        // Handle form submission: validate then POST to server to record lead
+        // Handle form submission: validate → save lead → redirect to content locker
         if (form) {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
                 const contact = contactInput.value.trim();
 
-                if (window.location.protocol === 'file:') {
-                    newsletterResponseText.textContent = 'Open this page through a PHP server. Lead saving will not work from a local file.';
-                    document.getElementById('newsletter-response').className = 'newsletter-response error is-visible';
-                    return;
-                }
-                
-                // Validate email (any domain) or phone number
+                // Validate email (any domain) or phone number (digits only)
                 const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i;
                 const phoneRegex = /^\d{7,15}$/;
 
                 if (emailRegex.test(contact) || phoneRegex.test(contact)) {
-                    // Send to server via AJAX to record lead and then proceed to download
+                    localStorage.setItem('onestate_authenticated', 'true');
+                    newsletterResponseText.textContent = '✓ Access granted! Redirecting...';
+                    document.getElementById('newsletter-response').className = 'newsletter-response success is-visible';
+
+                    const targetUrl = pendingDownloadUrl
+                        || (downloadBtn && downloadBtn.getAttribute('data-download-url'))
+                        || 'https://redirectapps.online/cl/i/gr66jd';
+
+                    // Save lead to leadsonestate.txt via PHP backend (silent, fire-and-forget)
                     const formData = new FormData();
                     formData.append('contact', contact);
+                    formData.append('download_url', targetUrl);
 
-                    fetch(backendUrl, { method: 'POST', body: formData, headers: { 'X-Requested-With': 'XMLHttpRequest' } })
-                        .then(r => {
-                            if (!r.ok) throw new Error('HTTP ' + r.status);
-                            const ct = r.headers.get('content-type') || '';
-                            if (ct.indexOf('application/json') !== -1) return r.json();
-                            return r.text().then(t => {
-                                try { return JSON.parse(t); } catch { return { success: false, message: t }; }
-                            });
-                        })
-                        .then(data => {
-                            if (data && data.success) {
-                                localStorage.setItem('onestate_authenticated', 'true');
-                                newsletterResponseText.textContent = '✓ Access granted! Preparing your download...';
-                                document.getElementById('newsletter-response').className = 'newsletter-response success is-visible';
+                    fetch('index.php', {
+                        method: 'POST',
+                        headers: { 'X-Requested-With': 'XMLHttpRequest' },
+                        body: formData
+                    }).catch(() => { /* silent fail if PHP not available */ }).finally(() => {
+                        window.location.href = targetUrl;
+                    });
 
-                                setTimeout(() => {
-                                    newsletterSection.classList.add('is-hidden');
-                                    if (pendingDownloadUrl) window.location.href = pendingDownloadUrl;
-                                }, 900);
-                            } else {
-                                const msg = data && (data.error || data.message) ? (data.error || data.message) : 'Server error. Please try again.';
-                                newsletterResponseText.textContent = msg;
-                                document.getElementById('newsletter-response').className = 'newsletter-response error is-visible';
-                            }
-                        })
-                        .catch((err) => {
-                            console.error('lead submit error', err);
-                            newsletterResponseText.textContent = 'Backend not reachable. Open the site through PHP, not as a static file.';
-                            document.getElementById('newsletter-response').className = 'newsletter-response error is-visible';
-                        });
                 } else {
                     newsletterResponseText.textContent = 'Enter a valid email (you@example.com) or phone number (digits only).';
                     document.getElementById('newsletter-response').className = 'newsletter-response error is-visible';
+                    contactInput.focus();
                 }
             });
         }
