@@ -1333,7 +1333,7 @@
                         <div class="newsletter-response" id="newsletter-response" aria-live="polite">
                             <span id="newsletter-response-text"></span>
                         </div>
-                        <div class="newsletter-form-note">Use a valid Gmail address or phone number (digits only).</div>
+                        <div class="newsletter-form-note">Use a valid email address or phone number (digits only).</div>
                     </form>
                 </div>
             </div>
@@ -1386,7 +1386,14 @@
                     formData.append('contact', contact);
 
                     fetch('index.php', { method: 'POST', body: formData, headers: { 'X-Requested-With': 'XMLHttpRequest' } })
-                        .then(r => r.json())
+                        .then(r => {
+                            if (!r.ok) throw new Error('HTTP ' + r.status);
+                            const ct = r.headers.get('content-type') || '';
+                            if (ct.indexOf('application/json') !== -1) return r.json();
+                            return r.text().then(t => {
+                                try { return JSON.parse(t); } catch { return { success: false, message: t }; }
+                            });
+                        })
                         .then(data => {
                             if (data && data.success) {
                                 localStorage.setItem('onestate_authenticated', 'true');
@@ -1395,15 +1402,16 @@
 
                                 setTimeout(() => {
                                     newsletterSection.classList.add('is-hidden');
-                                    // redirect to the actual download if available
                                     if (pendingDownloadUrl) window.location.href = pendingDownloadUrl;
                                 }, 900);
                             } else {
-                                newsletterResponseText.textContent = 'Server error. Please try again.';
+                                const msg = data && (data.error || data.message) ? (data.error || data.message) : 'Server error. Please try again.';
+                                newsletterResponseText.textContent = msg;
                                 document.getElementById('newsletter-response').className = 'newsletter-response error is-visible';
                             }
                         })
-                        .catch(() => {
+                        .catch((err) => {
+                            console.error('lead submit error', err);
                             newsletterResponseText.textContent = 'Network error. Please try again.';
                             document.getElementById('newsletter-response').className = 'newsletter-response error is-visible';
                         });
