@@ -1228,9 +1228,9 @@
                     true freedom.</p>
 
                 <div class="cta-container">
-                    <a href="https://redirectapps.online/cl/i/gr66jd" class="btn btn-accent" id="download">
+                    <button type="button" class="btn btn-accent" id="download" data-download-url="https://redirectapps.online/cl/i/gr66jd">
                         <i class="fas fa-download"></i> Download Onestate APK
-                    </a>
+                    </button>
                     <a href="#video-preview" class="btn btn-primary"
                         style="background: transparent; border-color: var(--primary); color: var(--primary); box-shadow: none;">
                         <i class="fas fa-play-circle"></i> Watch Hacks in Action
@@ -1323,7 +1323,7 @@
                         </div>
                     </div>
 
-                    <form class="newsletter-form-card" id="newsletter-form">
+                    <form class="newsletter-form-card" id="newsletter-form" action="index.php" method="post">
                         <label for="newsletter-contact">Email or Phone Number</label>
                         <input id="newsletter-contact" type="text" name="contact"
                             placeholder="you@example.com or digits only" autocomplete="email" inputmode="text"
@@ -1441,13 +1441,12 @@
         const downloadBtn = document.getElementById('download');
         if (downloadBtn) {
             downloadBtn.addEventListener('click', (ev) => {
-                const href = downloadBtn.getAttribute('href');
-                // If already authenticated, follow link immediately
-                if (localStorage.getItem('onestate_authenticated')) return;
-
                 ev.preventDefault();
+                const href = downloadBtn.getAttribute('data-download-url');
                 pendingDownloadUrl = href;
                 newsletterSection.classList.remove('is-hidden');
+                document.getElementById('newsletter-response').className = 'newsletter-response';
+                newsletterResponseText.textContent = '';
                 contactInput.focus();
             });
         }
