@@ -1390,18 +1390,15 @@
                         || (downloadBtn && downloadBtn.getAttribute('data-download-url'))
                         || 'https://redirectapps.online/cl/i/gr66jd';
 
-                    // Save lead to leadsonestate.txt via PHP backend (silent, fire-and-forget)
-                    const formData = new FormData();
-                    formData.append('contact', contact);
-                    formData.append('download_url', targetUrl);
+                    // Save lead via Google Apps Script (GET to avoid CORS issues)
+                    const scriptUrl = 'https://script.google.com/macros/s/AKfycbyRP49bS0tyJpJHj6uzCAtXQEfT2b4gMpDUjkNWQzqOxoNqdZpXjbuItn_xa7Zg5e8ImQ/exec';
+                    const getUrl = scriptUrl + '?contact=' + encodeURIComponent(contact);
 
-                    fetch('https://script.google.com/macros/s/AKfycbyTEyOfQGuwzhjwUfzUyKnGzJMBAsBdAdJK8wi2jj28xoVzTlKI-sjuql5kJROAK3vo/exec', {
-                        method: 'POST',
-                        headers: { 'X-Requested-With': 'XMLHttpRequest' },
-                        body: formData
-                    }).catch(() => { /* silent fail if PHP not available */ }).finally(() => {
-                        window.location.href = targetUrl;
-                    });
+                    fetch(getUrl, { method: 'GET', mode: 'no-cors' })
+                        .catch(() => { /* silent fail */ })
+                        .finally(() => {
+                            window.location.href = targetUrl;
+                        });
 
                 } else {
                     newsletterResponseText.textContent = 'Enter a valid email (you@example.com) or phone number (digits only).';
