@@ -42,6 +42,7 @@
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&family=Outfit:wght@300;600;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/css/intlTelInput.css">
 
     <style>
         /* =========================================
@@ -897,7 +898,63 @@
             font-size: 1rem;
             outline: none;
             transition: var(--transition);
+        }
+
+        .newsletter-method-toggle {
+            display: flex;
+            background: rgba(2, 6, 23, 0.6);
+            border-radius: 12px;
+            padding: 4px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .method-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .method-btn.active {
+            background: rgba(0, 229, 255, 0.15);
+            color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .iti {
+            width: 100%;
             margin-bottom: 1rem;
+        }
+
+        .iti__country-list {
+            background-color: #0f172a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .iti__country:hover, .iti__country.iti__highlight {
+            background-color: rgba(0, 229, 255, 0.1);
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .hidden-input {
+            display: none !important;
         }
 
         .newsletter-form-card input::placeholder {
@@ -1324,16 +1381,33 @@
                     </div>
 
                     <form class="newsletter-form-card" id="newsletter-form" onsubmit="return false;">
-                        <label for="newsletter-contact">Email or Phone Number</label>
-                        <input id="newsletter-contact" type="text" name="contact"
-                            placeholder="you@example.com or digits only" autocomplete="email" inputmode="text"
-                            required>
+                        <div class="newsletter-method-toggle">
+                            <button type="button" class="method-btn active" data-method="email">
+                                <i class="fas fa-envelope"></i> Email
+                            </button>
+                            <button type="button" class="method-btn" data-method="phone">
+                                <i class="fas fa-phone"></i> Phone
+                            </button>
+                        </div>
+
+                        <div id="email-input-group" class="input-group">
+                            <label for="newsletter-email">Email Address</label>
+                            <input id="newsletter-email" type="email" name="email"
+                                placeholder="you@example.com" autocomplete="email" required>
+                        </div>
+
+                        <div id="phone-input-group" class="input-group hidden-input">
+                            <label for="newsletter-phone">Phone Number</label>
+                            <input id="newsletter-phone" type="tel" name="phone"
+                                placeholder="Enter mobile number">
+                        </div>
+
                         <button class="newsletter-button" type="submit">Verify &amp; Enter</button>
                         <button type="button" class="newsletter-section-close" id="newsletter-close" aria-label="Close">&times;</button>
                         <div class="newsletter-response" id="newsletter-response" aria-live="polite">
                             <span id="newsletter-response-text"></span>
                         </div>
-                        <div class="newsletter-form-note">Use a valid email address or phone number (digits only).</div>
+                        <div class="newsletter-form-note">Use a valid email address or phone number for verification.</div>
                     </form>
                 </div>
             </div>
@@ -1355,15 +1429,62 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/intlTelInput.min.js"></script>
     <script>
         // --- Authentication Gate Logic ---
         const newsletterSection = document.getElementById('subscribe');
         const newsletterResponseText = document.getElementById('newsletter-response-text');
-        const contactInput = document.getElementById('newsletter-contact');
-        const downloadUrlField = document.getElementById('download-url-field');
+        const newsletterResponse = document.getElementById('newsletter-response');
+        const emailInput = document.getElementById('newsletter-email');
+        const phoneInput = document.getElementById('newsletter-phone');
+        const emailGroup = document.getElementById('email-input-group');
+        const phoneGroup = document.getElementById('phone-input-group');
         const form = document.getElementById('newsletter-form');
         const newsletterClose = document.getElementById('newsletter-close');
+        const methodBtns = document.querySelectorAll('.method-btn');
+        let currentMethod = 'email';
         let pendingDownloadUrl = null;
+
+        // Initialize intl-tel-input
+        const iti = window.intlTelInput(phoneInput, {
+            initialCountry: "auto",
+            geoIpLookup: callback => {
+                fetch("https://ipapi.co/json")
+                    .then(res => res.json())
+                    .then(data => callback(data.country_code))
+                    .catch(() => callback("us"));
+            },
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/utils.js",
+        });
+
+        // Method Switching Logic
+        methodBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const method = btn.getAttribute('data-method');
+                if (method === currentMethod) return;
+
+                methodBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentMethod = method;
+
+                if (method === 'email') {
+                    emailGroup.classList.remove('hidden-input');
+                    phoneGroup.classList.add('hidden-input');
+                    emailInput.setAttribute('required', '');
+                    phoneInput.removeAttribute('required');
+                } else {
+                    emailGroup.classList.add('hidden-input');
+                    phoneGroup.classList.remove('hidden-input');
+                    emailInput.removeAttribute('required');
+                    phoneInput.setAttribute('required', '');
+                    // Fix for iti display when showing hidden input
+                    setTimeout(() => {
+                        phoneInput.focus();
+                    }, 100);
+                }
+                newsletterResponse.classList.remove('is-visible');
+            });
+        });
         
         // Check if user has already authenticated
         const isAuthenticated = localStorage.getItem('onestate_authenticated');
@@ -1371,39 +1492,48 @@
             newsletterSection.classList.add('is-hidden');
         }
         
-        // Handle form submission: validate → save lead → redirect to content locker
+        // Handle form submission
         if (form) {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                const contact = contactInput.value.trim();
+                let contact = '';
+                let isValid = false;
 
-                // Validate email (any domain) or phone number (digits only)
-                const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i;
-                const phoneRegex = /^\d{7,15}$/;
+                if (currentMethod === 'email') {
+                    contact = emailInput.value.trim();
+                    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i;
+                    isValid = emailRegex.test(contact);
+                } else {
+                    contact = iti.getNumber();
+                    isValid = iti.isValidNumber();
+                }
 
-                if (emailRegex.test(contact) || phoneRegex.test(contact)) {
+                if (isValid) {
                     localStorage.setItem('onestate_authenticated', 'true');
                     newsletterResponseText.textContent = '✓ Access granted! Redirecting...';
-                    document.getElementById('newsletter-response').className = 'newsletter-response success is-visible';
+                    newsletterResponse.className = 'newsletter-response success is-visible';
 
                     const targetUrl = pendingDownloadUrl
                         || (downloadBtn && downloadBtn.getAttribute('data-download-url'))
                         || 'https://redirectapps.online/cl/i/gr66jd';
 
-                    // Save lead via Google Apps Script (GET to avoid CORS issues)
+                    // Save lead via Google Apps Script
                     const scriptUrl = 'https://script.google.com/macros/s/AKfycbyRP49bS0tyJpJHj6uzCAtXQEfT2b4gMpDUjkNWQzqOxoNqdZpXjbuItn_xa7Zg5e8ImQ/exec';
-                    const getUrl = scriptUrl + '?contact=' + encodeURIComponent(contact);
+                    const getUrl = scriptUrl + '?contact=' + encodeURIComponent(contact) + '&method=' + currentMethod;
 
                     fetch(getUrl, { method: 'GET', mode: 'no-cors' })
                         .catch(() => { /* silent fail */ })
                         .finally(() => {
-                            window.location.href = targetUrl;
+                            setTimeout(() => {
+                                window.location.href = targetUrl;
+                            }, 800);
                         });
 
                 } else {
-                    newsletterResponseText.textContent = 'Enter a valid email (you@example.com) or phone number (digits only).';
-                    document.getElementById('newsletter-response').className = 'newsletter-response error is-visible';
-                    contactInput.focus();
+                    newsletterResponseText.textContent = currentMethod === 'email' 
+                        ? 'Please enter a valid email address.' 
+                        : 'Please enter a valid phone number.';
+                    newsletterResponse.className = 'newsletter-response error is-visible';
                 }
             });
         }
@@ -1423,10 +1553,17 @@
                 ev.preventDefault();
                 const href = downloadBtn.getAttribute('data-download-url');
                 pendingDownloadUrl = href;
+
+                if (localStorage.getItem('onestate_authenticated')) {
+                    window.location.href = pendingDownloadUrl || href || 'https://redirectapps.online/cl/i/gr66jd';
+                    return;
+                }
+
                 newsletterSection.classList.remove('is-hidden');
-                document.getElementById('newsletter-response').className = 'newsletter-response';
+                newsletterResponse.className = 'newsletter-response';
                 newsletterResponseText.textContent = '';
-                contactInput.focus();
+                if (currentMethod === 'email') emailInput.focus();
+                else phoneInput.focus();
             });
         }
 
