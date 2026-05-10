@@ -946,6 +946,17 @@
             max-width: 300px;
         }
 
+        @media (max-width: 768px) {
+            .iti__country-list {
+                max-width: 90vw !important;
+                position: fixed !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                max-height: 50vh !important;
+            }
+        }
+
         .iti__country-name, .iti__dial-code {
             color: #fff !important;
         }
@@ -1460,6 +1471,7 @@
         const iti = window.intlTelInput(phoneInput, {
             initialCountry: "auto",
             separateDialCode: true,
+            dropdownContainer: document.body,
             geoIpLookup: callback => {
                 fetch("https://ipapi.co/json")
                     .then(res => res.json())
