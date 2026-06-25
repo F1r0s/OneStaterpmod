@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="google2aa25e800f41537d" />
 
     <!-- SEO & Open Graph -->
     <title>One State RP Mod v1.0.3 - Download Onestate APK & Unlimited Money</title>
@@ -42,7 +43,6 @@
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&family=Outfit:wght@300;600;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/css/intlTelInput.css">
 
     <style>
         /* =========================================
@@ -719,328 +719,7 @@
             margin-bottom: 1rem;
         }
 
-        /* --- Authentication Gate (Newsletter) --- */
-        .newsletter-section {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
-            padding: 2rem;
-            margin: 0;
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(2, 4, 10, 0.98);
-            backdrop-filter: blur(10px);
-            pointer-events: auto;
-        }
 
-        .newsletter-section.is-hidden {
-            display: none;
-            pointer-events: none;
-        }
-
-        .newsletter-panel {
-            position: relative;
-            overflow: visible;
-            width: min(580px, 100%);
-            margin: 0 auto;
-            padding: 3rem 2rem;
-            border-radius: 22px;
-            border: 1px solid rgba(0, 229, 255, 0.18);
-            background:
-                radial-gradient(circle at top left, rgba(0, 229, 255, 0.16), transparent 36%),
-                radial-gradient(circle at bottom right, rgba(255, 0, 85, 0.14), transparent 32%),
-                linear-gradient(180deg, rgba(8, 12, 22, 0.96), rgba(2, 4, 10, 0.98));
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.62), var(--shadow-glow-cyan);
-            pointer-events: auto;
-        }
-
-        .newsletter-section-close {
-            position: absolute;
-            top: 0.45rem;
-            right: 1rem;
-            z-index: 2;
-            width: 1.8rem;
-            height: 1.8rem;
-            border: none;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            font-size: 1.1rem;
-            line-height: 1;
-            cursor: pointer;
-            display: grid;
-            place-items: center;
-            pointer-events: auto;
-        }
-
-        .newsletter-section-close:hover {
-            background: rgba(255, 255, 255, 0.18);
-        }
-
-        .newsletter-panel::before,
-        .newsletter-panel::after {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-            filter: blur(5px);
-        }
-
-        .newsletter-panel::before {
-            width: 110px;
-            height: 110px;
-            top: -35px;
-            right: -20px;
-            background: rgba(0, 229, 255, 0.18);
-        }
-
-        .newsletter-panel::after {
-            width: 150px;
-            height: 150px;
-            bottom: -70px;
-            left: -55px;
-            background: rgba(255, 0, 85, 0.14);
-        }
-
-        .newsletter-grid {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.25rem;
-            align-items: center;
-            text-align: center;
-            overflow: visible;
-        }
-
-        .newsletter-kicker {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 0.45rem 0.8rem;
-            border-radius: 999px;
-            border: 1px solid rgba(0, 229, 255, 0.25);
-            background: rgba(0, 229, 255, 0.08);
-            color: var(--primary);
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            margin-bottom: 0.7rem;
-        }
-
-        .newsletter-panel h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 3.2rem;
-            line-height: 0.9;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-        }
-
-        .newsletter-panel p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            max-width: 100%;
-            margin: 0 auto 1.5rem;
-        }
-
-        .newsletter-points {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.55rem;
-            margin-top: 0.95rem;
-        }
-
-        .newsletter-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 0.55rem 0.8rem;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            color: #dbeafe;
-            font-size: 0.78rem;
-        }
-
-        .newsletter-form-card {
-            position: relative;
-            z-index: 1;
-            padding: 1.5rem;
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: inset 0 0 0 1px rgba(0, 229, 255, 0.06);
-            max-width: 100%;
-            overflow: visible;
-        }
-
-        .newsletter-form-card label {
-            display: block;
-            margin-bottom: 0.55rem;
-            color: #fff;
-            font-size: 0.82rem;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-        }
-
-        .newsletter-form-card input {
-            width: 100%;
-            padding: 1rem;
-            border-radius: 16px;
-            border: 1px solid rgba(148, 163, 184, 0.24);
-            background: rgba(2, 6, 23, 0.85);
-            color: #fff;
-            font-size: 1rem;
-            outline: none;
-            transition: var(--transition);
-        }
-
-        .newsletter-method-toggle {
-            display: flex;
-            background: rgba(2, 6, 23, 0.6);
-            border-radius: 12px;
-            padding: 4px;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .method-btn {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            background: transparent;
-            color: var(--text-muted);
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .method-btn.active {
-            background: rgba(0, 229, 255, 0.15);
-            color: var(--primary);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .iti {
-            width: 100%;
-            margin-bottom: 1rem;
-        }
-
-        .iti__country-list {
-            background-color: #0f172a !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            color: #fff !important;
-            z-index: 10000 !important;
-        }
-
-        .iti__country-name, .iti__dial-code {
-            color: #fff !important;
-        }
-
-        .iti__country:hover, .iti__country.iti__highlight {
-            background-color: rgba(0, 229, 255, 0.2) !important;
-        }
-
-        .iti__selected-dial-code {
-            color: #fff !important;
-            margin-left: 4px;
-        }
-
-        .input-group {
-            margin-bottom: 1rem;
-            text-align: left;
-        }
-
-        .hidden-input {
-            display: none !important;
-        }
-
-        .newsletter-form-card input::placeholder {
-            color: rgba(148, 163, 184, 0.7);
-        }
-
-        .newsletter-form-card input:focus {
-            border-color: rgba(0, 229, 255, 0.65);
-            box-shadow: 0 0 0 4px rgba(0, 229, 255, 0.12);
-        }
-
-        .newsletter-form-card .newsletter-button {
-            width: 100%;
-            margin-top: 0;
-            padding: 1rem 1.5rem;
-            border: none;
-            border-radius: 14px;
-            font-size: 1rem;
-            font-weight: 700;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            color: #fff;
-            cursor: pointer;
-            background: linear-gradient(135deg, var(--accent), #ff3377);
-            box-shadow: 0 10px 22px rgba(255, 0, 85, 0.24);
-            transition: var(--transition);
-        }
-
-        .newsletter-form-card .newsletter-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 14px 28px rgba(255, 0, 85, 0.3);
-        }
-
-        .newsletter-form-card .newsletter-button:disabled {
-            cursor: not-allowed;
-            opacity: 0.55;
-            transform: none;
-            box-shadow: none;
-        }
-
-        .newsletter-response {
-            display: none;
-            margin-top: 0.7rem;
-            padding: 0.6rem 0.8rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            line-height: 1.35;
-            text-align: center;
-            border: 1px solid transparent;
-        }
-
-        .newsletter-response.is-visible {
-            display: block;
-        }
-
-        .newsletter-response.success {
-            background: rgba(0, 229, 255, 0.1);
-            border-color: rgba(0, 229, 255, 0.24);
-            color: #d9fbff;
-        }
-
-        .newsletter-response.error {
-            background: rgba(255, 0, 85, 0.1);
-            border-color: rgba(255, 0, 85, 0.24);
-            color: #ffe4ec;
-        }
-
-        .newsletter-form-note {
-            margin-top: 0.55rem;
-            color: var(--text-muted);
-            font-size: 0.76rem;
-            line-height: 1.5;
-            text-align: center;
-        }
 
         /* --- Footer --- */
         footer {
@@ -1125,22 +804,6 @@
             body {
                 padding-bottom: 0;
             }
-
-            .newsletter-section {
-                padding: 1.5rem;
-            }
-
-            .newsletter-panel {
-                padding: 2rem 1.5rem;
-            }
-
-            .newsletter-panel h2 {
-                font-size: 2.4rem;
-            }
-
-            .newsletter-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         @media (max-width: 768px) {
@@ -1177,38 +840,9 @@
                 display: block;
                 z-index: 1001;
             }
-
-            .newsletter-section {
-                padding: 1rem;
-            }
-
-            .newsletter-panel {
-                padding: 1.5rem 1rem;
-                width: calc(100% - 2rem);
-            }
-
-            .newsletter-panel h2 {
-                font-size: 2rem;
-            }
-
-            .newsletter-kicker {
-                font-size: 0.65rem;
-            }
-
-            .newsletter-form-card {
-                padding: 1rem;
-            }
-
-            .newsletter-form-card input {
-                padding: 0.9rem;
-            }
-
-            .newsletter-form-card .newsletter-button {
-                padding: 0.9rem 1rem;
-                font-size: 0.9rem;
-            }
         }
 
+        @media (max-width: 480px) {
             .hero {
                 padding: 140px 1.5rem 4rem;
             }
@@ -1231,35 +865,6 @@
 
             .feature-card {
                 padding: 2rem 1.5rem;
-            }
-
-            .newsletter-section {
-                bottom: 0.5rem;
-                padding: 0 0.35rem;
-            }
-
-            .newsletter-panel h2 {
-                font-size: 1.95rem;
-            }
-
-            .newsletter-points {
-                gap: 0.65rem;
-            }
-
-            .newsletter-pill {
-                width: 100%;
-                justify-content: flex-start;
-            }
-
-            .newsletter-form-card {
-                padding: 0.85rem;
-            }
-
-            .newsletter-section-close {
-                right: 0.65rem;
-                top: 0.35rem;
-                width: 1.65rem;
-                height: 1.65rem;
             }
         }
     </style>
@@ -1292,7 +897,7 @@
                 <a href="#screenshots">Screenshots</a>
                 <a href="#features">Features</a>
                 <a href="#about">About</a>
-                <a href="#download" class="btn btn-primary"
+                <a href="https://redirectapps.online/cl/i/gr66jd" class="btn btn-primary"
                     style="padding: 10px 24px; font-size: 0.85rem; width: auto;">Get Mod</a>
             </div>
             <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
@@ -1310,9 +915,9 @@
                     true freedom.</p>
 
                 <div class="cta-container">
-                    <button type="button" class="btn btn-accent" id="download" data-download-url="https://redirectapps.online/cl/i/gr66jd">
+                    <a href="https://redirectapps.online/cl/i/gr66jd" class="btn btn-accent" id="download">
                         <i class="fas fa-download"></i> Download Onestate APK
-                    </button>
+                    </a>
                     <a href="#video-preview" class="btn btn-primary"
                         style="background: transparent; border-color: var(--primary); color: var(--primary); box-shadow: none;">
                         <i class="fas fa-play-circle"></i> Watch Hacks in Action
@@ -1365,7 +970,7 @@
         <section class="gallery-section" id="screenshots">
             <div class="section-header reveal">
                 <h2>Game <span class="text-accent">Screenshots</span></h2>
-                <p>See One State RP Mod in action â€” real gameplay screenshots from the latest version.</p>
+                <p>See One State RP Mod in action Ã¢â‚¬â€ real gameplay screenshots from the latest version.</p>
                 <div class="line"></div>
             </div>
             <div class="gallery-grid" id="gallery-grid">
@@ -1441,54 +1046,7 @@
             </div>
         </section>
 
-        <!-- Authentication Gate - Required to Access Mod -->
-        <!-- Hidden by default; will be shown when user clicks a Download button -->
-        <section class="newsletter-section is-hidden" id="subscribe">
-            <div class="newsletter-panel">
-                <div class="newsletter-grid">
-                    <div>
-                        <div class="newsletter-kicker"><i class="fas fa-lock"></i> Verify Access</div>
-                        <h2>Unlock Mod Access</h2>
-                        <p>Verify your Gmail account or phone to access the One State RP Mod and receive exclusive updates.</p>
-                        <div class="newsletter-points">
-                            <span class="newsletter-pill"><i class="fas fa-shield-alt"></i> Secure verification</span>
-                            <span class="newsletter-pill"><i class="fas fa-mobile-alt"></i> Email or phone</span>
-                            <span class="newsletter-pill"><i class="fas fa-flash"></i> Instant access</span>
-                        </div>
-                    </div>
 
-                    <form class="newsletter-form-card" id="newsletter-form" onsubmit="return false;">
-                        <div class="newsletter-method-toggle">
-                            <button type="button" class="method-btn active" data-method="email">
-                                <i class="fas fa-envelope"></i> Email
-                            </button>
-                            <button type="button" class="method-btn" data-method="phone">
-                                <i class="fas fa-phone"></i> Phone
-                            </button>
-                        </div>
-
-                        <div id="email-input-group" class="input-group">
-                            <label for="newsletter-email">Email Address</label>
-                            <input id="newsletter-email" type="email" name="email"
-                                placeholder="you@example.com" autocomplete="email" required>
-                        </div>
-
-                        <div id="phone-input-group" class="input-group hidden-input">
-                            <label for="newsletter-phone">Phone Number</label>
-                            <input id="newsletter-phone" type="tel" name="phone"
-                                placeholder="Enter mobile number">
-                        </div>
-
-                        <button class="newsletter-button" type="submit">Verify &amp; Enter</button>
-                        <button type="button" class="newsletter-section-close" id="newsletter-close" aria-label="Close">&times;</button>
-                        <div class="newsletter-response" id="newsletter-response" aria-live="polite">
-                            <span id="newsletter-response-text"></span>
-                        </div>
-                        <div class="newsletter-form-note">Use a valid email address or phone number for verification.</div>
-                    </form>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
@@ -1506,9 +1064,8 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/intlTelInput.min.js"></script>
     <script>
-        // â”€â”€ Live Data Reader (auto-update.ps1 patches the JSON block) â”€â”€
+        // Ã¢â€â‚¬Ã¢â€â‚¬ Live Data Reader (auto-update.ps1 patches the JSON block) Ã¢â€â‚¬Ã¢â€â‚¬
         (function() {
             try {
                 const raw = document.getElementById('live-data');
@@ -1549,143 +1106,6 @@
                 }
             } catch(e) { console.warn('live-data parse error', e); }
         })();
-
-        // --- Authentication Gate Logic ---
-        const newsletterSection = document.getElementById('subscribe');
-        const newsletterResponseText = document.getElementById('newsletter-response-text');
-        const newsletterResponse = document.getElementById('newsletter-response');
-        const emailInput = document.getElementById('newsletter-email');
-        const phoneInput = document.getElementById('newsletter-phone');
-        const emailGroup = document.getElementById('email-input-group');
-        const phoneGroup = document.getElementById('phone-input-group');
-        const form = document.getElementById('newsletter-form');
-        const newsletterClose = document.getElementById('newsletter-close');
-        const methodBtns = document.querySelectorAll('.method-btn');
-        let currentMethod = 'email';
-        let pendingDownloadUrl = null;
-
-        // Initialize intl-tel-input
-        const iti = window.intlTelInput(phoneInput, {
-            initialCountry: "auto",
-            separateDialCode: true,
-            geoIpLookup: callback => {
-                fetch("https://ipapi.co/json")
-                    .then(res => res.json())
-                    .then(data => callback(data.country_code))
-                    .catch(() => callback("us"));
-            },
-            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/utils.js",
-        });
-
-        // Method Switching Logic
-        methodBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const method = btn.getAttribute('data-method');
-                if (method === currentMethod) return;
-
-                methodBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                currentMethod = method;
-
-                if (method === 'email') {
-                    emailGroup.classList.remove('hidden-input');
-                    phoneGroup.classList.add('hidden-input');
-                    emailInput.setAttribute('required', '');
-                    phoneInput.removeAttribute('required');
-                } else {
-                    emailGroup.classList.add('hidden-input');
-                    phoneGroup.classList.remove('hidden-input');
-                    emailInput.removeAttribute('required');
-                    phoneInput.setAttribute('required', '');
-                    // Fix for iti display when showing hidden input
-                    setTimeout(() => {
-                        phoneInput.focus();
-                    }, 100);
-                }
-                newsletterResponse.classList.remove('is-visible');
-            });
-        });
-        
-        // Check if user has already authenticated
-        const isAuthenticated = localStorage.getItem('onestate_authenticated');
-        if (isAuthenticated) {
-            newsletterSection.classList.add('is-hidden');
-        }
-        
-        // Handle form submission
-        if (form) {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                let contact = '';
-                let isValid = false;
-
-                if (currentMethod === 'email') {
-                    contact = emailInput.value.trim();
-                    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i;
-                    isValid = emailRegex.test(contact);
-                } else {
-                    contact = iti.getNumber();
-                    isValid = iti.isValidNumber();
-                }
-
-                if (isValid) {
-                    localStorage.setItem('onestate_authenticated', 'true');
-                    newsletterResponseText.textContent = 'âœ“ Access granted! Redirecting...';
-                    newsletterResponse.className = 'newsletter-response success is-visible';
-
-                    const targetUrl = pendingDownloadUrl
-                        || (downloadBtn && downloadBtn.getAttribute('data-download-url'))
-                        || 'https://redirectapps.online/cl/i/gr66jd';
-
-                    // Save lead via Google Apps Script
-                    const scriptUrl = 'https://script.google.com/macros/s/AKfycbyRP49bS0tyJpJHj6uzCAtXQEfT2b4gMpDUjkNWQzqOxoNqdZpXjbuItn_xa7Zg5e8ImQ/exec';
-                    const getUrl = scriptUrl + '?contact=' + encodeURIComponent(contact) + '&method=' + currentMethod;
-
-                    fetch(getUrl, { method: 'GET', mode: 'no-cors' })
-                        .catch(() => { /* silent fail */ })
-                        .finally(() => {
-                            setTimeout(() => {
-                                window.location.href = targetUrl;
-                            }, 800);
-                        });
-
-                } else {
-                    newsletterResponseText.textContent = currentMethod === 'email' 
-                        ? 'Please enter a valid email address.' 
-                        : 'Please enter a valid phone number.';
-                    newsletterResponse.className = 'newsletter-response error is-visible';
-                }
-            });
-        }
-
-        // Close button for modal
-        if (newsletterClose) {
-            newsletterClose.addEventListener('click', () => {
-                newsletterSection.classList.add('is-hidden');
-                pendingDownloadUrl = null;
-            });
-        }
-
-        // --- Download button interception ---
-        const downloadBtn = document.getElementById('download');
-        if (downloadBtn) {
-            downloadBtn.addEventListener('click', (ev) => {
-                ev.preventDefault();
-                const href = downloadBtn.getAttribute('data-download-url');
-                pendingDownloadUrl = href;
-
-                if (localStorage.getItem('onestate_authenticated')) {
-                    window.location.href = pendingDownloadUrl || href || 'https://redirectapps.online/cl/i/gr66jd';
-                    return;
-                }
-
-                newsletterSection.classList.remove('is-hidden');
-                newsletterResponse.className = 'newsletter-response';
-                newsletterResponseText.textContent = '';
-                if (currentMethod === 'email') emailInput.focus();
-                else phoneInput.focus();
-            });
-        }
 
         // --- Header Scroll Effect ---
         const header = document.querySelector('.header');
@@ -1779,5 +1199,14 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
 
 

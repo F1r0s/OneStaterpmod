@@ -24,6 +24,7 @@ Register-ScheduledTask `
     -Action $Action `
     -Trigger $Trigger `
     -Settings $Settings `
+    -User "SYSTEM" `
     -Description "OneState RP Mod - Daily sync of version, screenshots and description from getmodsapk.com" `
     -RunLevel Highest `
     -Force
