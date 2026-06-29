@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="google2aa25e800f41537d" />
 
-    <!-- SEO & Open Graph -->
-    <title>One State RP Mod v1.0.3 - Download Onestate APK & Unlimited Money</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="images/favicon-32.png">
+
+    <!-- SEO &amp; Open Graph -->
+    <title>One State RP Mod v1.0.3 - Download Onestate APK &amp; Unlimited Money</title>
     <meta name="description"
         content="Download One State RP Mod v1.1.1. A life simulator where you are free to do whatever you like without any restriction. Welcome to the various maps and activi..." />
     <!-- Highly Optimized Keywords Focus: "mod" prioritized -->
@@ -18,14 +24,14 @@
     <meta property="og:title" content="One State RP Mod - Top Onestate APK 2026" />
     <meta property="og:description"
         content="Dive into One State with our One State RP Mod. Access the hacker coins hack, custom vehicles, and play seamlessly on mobile or One State RP PC." />
-    <meta property="og:image"
-        content="https://img.utdstc.com/icon/da3/dbf/da3dbf7ec14362e9f526f9294082e92e2d329fd08e5194a76841559975b77fd0:200" />
+    <meta property="og:image" content="https://www.onestaterpmod.online/images/apple-touch-icon.png" />
     <meta property="og:url" content="https://www.onestaterpmod.online" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="One State RP Mod - Hacker Coins Hack Unlocked" />
     <meta name="twitter:description"
         content="The official-feeling One State RP Mod. Download Onestate APK today and unleash new limits." />
+    <meta name="twitter:image" content="https://www.onestaterpmod.online/images/apple-touch-icon.png" />
 
     <!-- Tracking Script -->
     <script type="text/javascript">
@@ -103,7 +109,7 @@
             width: 100vw;
             height: 100vh;
             z-index: -3;
-            background-image: url('https://i.ytimg.com/vi/FO831UlBB40/mqdefault.jpg');
+            background-image: url('images/ambient-texture.jpg');
             background-size: cover;
             background-position: center;
             opacity: 0.15;
@@ -314,10 +320,20 @@
             text-decoration: none;
         }
 
-        .logo i {
-            color: var(--primary);
-            font-size: 1.8rem;
-            filter: drop-shadow(0 0 10px var(--primary));
+        .logo img.logo-img {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(0,229,255,0.5);
+            box-shadow: 0 0 14px rgba(0,229,255,0.4), 0 0 30px rgba(0,229,255,0.15);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            flex-shrink: 0;
+        }
+
+        .logo:hover img.logo-img {
+            transform: scale(1.1) rotate(3deg);
+            box-shadow: 0 0 22px rgba(0,229,255,0.7), 0 0 50px rgba(0,229,255,0.25);
         }
 
         .nav-links {
@@ -375,6 +391,17 @@
             margin: 0 auto;
             text-align: center;
             position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/One-state-rp-7.jpg') center/cover no-repeat;
+            opacity: 0.08;
+            border-radius: 0 0 40px 40px;
+            pointer-events: none;
+            z-index: -1;
         }
 
         .hero-badge {
@@ -499,78 +526,183 @@
             box-shadow: 0 0 60px rgba(255, 0, 85, 0.8);
         }
 
-        /* --- Immersive Gallery --- */
+        /* --- Premium Editorial Gallery --- */
         .gallery-section {
-            padding: 4rem 2rem;
-            max-width: 1400px;
+            padding: 5rem 2rem;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 340px 260px;
+            gap: 1.2rem;
+        }
+
+        /* Featured large card — top-left */
+        .gallery-item.feat {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        /* Tall card — top-right spans both rows */
+        .gallery-item.tall {
+            grid-column: 2;
+            grid-row: 1 / 3;
+        }
+
+        /* Two equal bottom cards */
+        .gallery-item.sm {
+            grid-column: 1;
         }
 
         .gallery-item {
             position: relative;
-            border-radius: 20px;
+            border-radius: 18px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-            aspect-ratio: 16/9;
+            border: 1px solid rgba(255,255,255,0.06);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+            transition: all 0.45s cubic-bezier(0.25, 1, 0.5, 1);
             cursor: pointer;
-            background: #000;
+            background: #0a0c14;
         }
 
         .gallery-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.7s ease, filter 0.5s ease;
-            filter: brightness(0.7) contrast(1.1);
+            transition: transform 0.65s ease, filter 0.45s ease;
+            filter: brightness(0.75) contrast(1.1) saturate(1.05);
         }
 
         .gallery-item:hover {
-            transform: translateY(-15px);
-            z-index: 2;
-            box-shadow: var(--shadow-glow-cyan);
-            border-color: rgba(0, 229, 255, 0.4);
+            transform: translateY(-8px) scale(1.01);
+            z-index: 5;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.75), 0 0 30px rgba(0,229,255,0.18);
+            border-color: rgba(0,229,255,0.35);
         }
 
         .gallery-item:hover .gallery-img {
-            transform: scale(1.1);
-            filter: brightness(1) contrast(1.2);
+            transform: scale(1.08);
+            filter: brightness(0.92) contrast(1.15) saturate(1.15);
         }
 
         .gallery-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(2, 4, 10, 0.95) 0%, transparent 60%);
+            background: linear-gradient(to top, rgba(2,4,10,0.92) 0%, rgba(2,4,10,0.1) 55%, transparent 100%);
             display: flex;
-            align-items: flex-end;
-            padding: 2rem;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding: 1.6rem;
+            transition: background 0.35s ease;
         }
 
         .gallery-item:hover .gallery-overlay {
+            background: linear-gradient(to top, rgba(2,4,10,0.97) 0%, rgba(2,4,10,0.2) 60%, transparent 100%);
+        }
+
+        .gallery-num {
+            position: absolute;
+            top: 1.2rem;
+            left: 1.2rem;
+            width: 32px;
+            height: 32px;
+            background: rgba(0,229,255,0.15);
+            border: 1.5px solid rgba(0,229,255,0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--primary);
+            backdrop-filter: blur(6px);
+            letter-spacing: 0;
+        }
+
+        .gallery-expand {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            opacity: 0;
+            transform: scale(0.7);
+            transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275);
+        }
+
+        .gallery-item:hover .gallery-expand {
             opacity: 1;
+            transform: scale(1);
+            color: var(--primary);
+            border-color: rgba(0,229,255,0.4);
+            background: rgba(0,229,255,0.1);
         }
 
         .gallery-caption {
             color: #fff;
             font-weight: 800;
-            font-size: 1.2rem;
-            transform: translateY(15px);
-            transition: transform 0.4s ease;
-            text-shadow: 0 2px 10px #000;
+            font-size: 1.05rem;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.9);
+            transform: translateY(12px);
+            transition: transform 0.4s ease, color 0.3s ease;
+            line-height: 1.3;
+            margin-top: 0.3rem;
+        }
+
+        .gallery-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.35s ease 0.05s;
         }
 
         .gallery-item:hover .gallery-caption {
             transform: translateY(0);
-            color: var(--primary);
+        }
+
+        .gallery-item:hover .gallery-tag {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive gallery */
+        @media (max-width: 900px) {
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 240px 240px;
+            }
+            .gallery-item.feat { grid-column: 1 / 3; }
+            .gallery-item.tall { grid-column: 1; grid-row: 2; }
+            .gallery-item.sm   { grid-column: 2; grid-row: 2; }
+            .gallery-item.sm:last-child { display: none; }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+            .gallery-item.feat,
+            .gallery-item.tall,
+            .gallery-item.sm   { grid-column: 1; grid-row: auto; }
+            .gallery-item      { height: 220px; }
+            .gallery-item.sm:last-child { display: block; }
         }
 
         /* --- Sections Shared Layout --- */
@@ -787,85 +919,393 @@
 
         /* --- Responsive / Mobile Optimization --- */
         @media (max-width: 900px) {
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-
-            .section-header h2 {
-                font-size: 3.5rem;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-
-            body {
-                padding-bottom: 0;
-            }
+            .hero h1           { font-size: 3.5rem; }
+            .section-header h2 { font-size: 3.5rem; }
+            .btn { width: 100%; max-width: 300px; margin: 0 auto; }
         }
 
         @media (max-width: 768px) {
-            .header {
-                padding: 1rem 0;
-            }
+            .header { padding: 1rem 0; }
 
             .nav-links {
                 position: fixed;
-                top: 0;
-                right: -100%;
-                height: 100vh;
-                width: 85%;
-                background: rgba(2, 4, 10, 0.98);
+                top: 0; right: -100%;
+                height: 100vh; width: 85%;
+                background: rgba(2,4,10,0.98);
                 backdrop-filter: blur(25px);
                 flex-direction: column;
                 justify-content: center;
                 gap: 2.5rem;
                 transition: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-                box-shadow: -10px 0 50px rgba(0, 0, 0, 0.8);
-                border-left: 1px solid rgba(255, 255, 255, 0.05);
+                box-shadow: -10px 0 50px rgba(0,0,0,0.8);
+                border-left: 1px solid rgba(255,255,255,0.05);
                 z-index: 1500;
             }
+            .nav-links.active { right: 0; }
+            .nav-links a { font-size: 1.2rem; }
+            .mobile-menu-btn { display: block; z-index: 1001; }
 
-            .nav-links.active {
-                right: 0;
+            /* Gallery — 2 col on tablet */
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 200px 200px;
+                gap: 0.85rem;
             }
-
-            .nav-links a {
-                font-size: 1.2rem;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-                z-index: 1001;
-            }
+            .gallery-item.feat { grid-column: 1 / 3; }
+            .gallery-item.tall { grid-column: 1; grid-row: 2; }
+            .gallery-item.sm   { grid-column: 2; grid-row: 2; }
+            .gallery-item.sm:last-child { display: none; }
         }
 
         @media (max-width: 480px) {
-            .hero {
-                padding: 140px 1.5rem 4rem;
-            }
+            .hero { padding: 140px 1.5rem 4rem; }
+            .hero h1 { font-size: 2.8rem; }
+            .video-container { padding-bottom: 60%; }
+            .features { padding: 4rem 1.5rem; }
+            .feature-card { padding: 2rem 1.5rem; }
 
-            .hero h1 {
-                font-size: 2.8rem;
-            }
+            /* Profile banner smaller on mobile */
+            .profile-hero { border-radius: 14px; padding: 1rem; }
+            .profile-hero-img { height: 220px; }
+            .profile-meta { flex-direction: column; gap: 0.75rem; text-align: center; }
+            .profile-stats { justify-content: center; }
+            .profile-badge { top: 1.2rem; right: 1.2rem; font-size: 0.7rem; }
 
-            .video-container {
-                padding-bottom: 60%;
-            }
-
+            /* Gallery — single column on mobile */
             .gallery-grid {
                 grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                gap: 0.75rem;
             }
+            .gallery-item.feat,
+            .gallery-item.tall,
+            .gallery-item.sm { grid-column: 1; grid-row: auto; height: 210px; }
+            .gallery-item.sm:last-child { display: block; }
+            .gallery-section { padding: 3rem 1rem; }
+        }
 
-            .features {
-                padding: 4rem 1.5rem;
-            }
+        @media (max-width: 360px) {
+            .gallery-item.feat,
+            .gallery-item.tall,
+            .gallery-item.sm { height: 175px; }
+        }
 
-            .feature-card {
-                padding: 2rem 1.5rem;
-            }
+        /* ── Profile Hero ──────────────────────────────────────── */
+        .profile-hero {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(0,229,255,0.07) 0%, rgba(255,0,85,0.07) 100%);
+            border: 1px solid rgba(0,229,255,0.15);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.05);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .profile-hero::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 250px; height: 250px;
+            background: radial-gradient(circle, rgba(0,229,255,0.15), transparent 70%);
+            pointer-events: none;
+        }
+
+        .profile-hero-img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 16px;
+            display: block;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+            transition: transform 0.5s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+
+        .profile-hero-img:hover {
+            transform: scale(1.015);
+            box-shadow: 0 16px 60px rgba(0,0,0,0.8), 0 0 30px rgba(0,229,255,0.2);
+        }
+
+        .profile-badge {
+            position: absolute;
+            top: 2.5rem; right: 2.5rem;
+            background: rgba(255,0,85,0.9);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(255,0,85,0.5);
+        }
+
+        .profile-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-info h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.4rem;
+            letter-spacing: 2px;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+
+        .profile-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .profile-stats {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .profile-stat {
+            text-align: center;
+        }
+
+        .profile-stat-num {
+            font-weight: 900;
+            font-size: 1.6rem;
+            color: var(--primary);
+            display: block;
+        }
+
+        .profile-stat-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ── Photo Gallery ─────────────────────────────────────── */
+        .photo-gallery-section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .photo-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        .photo-gallery-grid .photo-item:first-child {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .photo-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            aspect-ratio: 16/10;
+            background: #000;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(0,229,255,0.4);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7), 0 0 30px rgba(0,229,255,0.2);
+            z-index: 2;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease, filter 0.4s ease;
+            filter: brightness(0.8) contrast(1.1) saturate(1.1);
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.08);
+            filter: brightness(1) contrast(1.15) saturate(1.2);
+        }
+
+        .photo-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(2,4,10,0.9) 0%, transparent 50%);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .photo-item:hover .photo-overlay {
+            opacity: 1;
+        }
+
+        .photo-overlay-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.7);
+            width: 56px;
+            height: 56px;
+            background: rgba(0,229,255,0.15);
+            border: 2px solid rgba(0,229,255,0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #fff;
+            transition: transform 0.35s cubic-bezier(0.175,0.885,0.32,1.275), opacity 0.35s ease;
+            opacity: 0;
+            backdrop-filter: blur(6px);
+        }
+
+        .photo-item:hover .photo-overlay-icon {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .photo-caption {
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            transform: translateY(10px);
+            transition: transform 0.35s ease;
+        }
+
+        .photo-item:hover .photo-caption {
+            transform: translateY(0);
+        }
+
+        /* ── Lightbox ────────────────────────────────────────── */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.93);
+            backdrop-filter: blur(12px);
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease, visibility 0s linear 0.35s;
+        }
+
+        .lightbox.active {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: all;
+            transition: opacity 0.35s ease, visibility 0s linear 0s;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            transform: scale(0.92);
+            transition: transform 0.35s cubic-bezier(0.25,1,0.5,1);
+        }
+
+        .lightbox.active .lightbox-content {
+            transform: scale(1);
+        }
+
+        .lightbox-img {
+            max-width: 88vw;
+            max-height: 80vh;
+            border-radius: 16px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.9), 0 0 40px rgba(0,229,255,0.15);
+            border: 1px solid rgba(0,229,255,0.2);
+            object-fit: contain;
+            display: block;
+        }
+
+        .lightbox-caption {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Close + nav buttons — use same visibility as parent lightbox */
+        .lightbox-close {
+            position: absolute;
+            top: -3.5rem;
+            right: 0;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #fff;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.25s ease, transform 0.25s ease;
+            flex-shrink: 0;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255,0,85,0.4);
+            transform: scale(1.1) rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.25s ease;
+            user-select: none;
+            z-index: 1;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(0,229,255,0.25);
+            border-color: rgba(0,229,255,0.5);
+        }
+
+        .lightbox-prev { left: -4rem; }
+        .lightbox-next { right: -4rem; }
+
+        @media (max-width: 700px) {
+            .lightbox-prev { left: 0.5rem; position: fixed; top: 50%; transform: translateY(-50%); }
+            .lightbox-next { right: 0.5rem; position: fixed; top: 50%; transform: translateY(-50%); }
+            .lightbox-close { position: fixed; top: 1rem; right: 1rem; }
+            .lightbox-img   { max-width: 96vw; max-height: 80vh; }
         }
     </style>
 
@@ -875,9 +1315,9 @@
   "version": "v1.1.1",
   "lastUpdated": "June 12, 2026",
   "fileSize": "125 MB",
-  "thumbnailUrl": "https://getmodsapk.com/storage/media/2025/12/onestate-rp-mod-apk.webp",
+  "thumbnailUrl": "images/thumbnail.jpg",
   "description": "A life simulator where you are free to do whatever you like without any restriction. Welcome to the various maps and activities of one state rp mod apk with unlimited money and diamonds.",
-  "screenshots": ["https://getmodsapk.com/storage/media/2025/8/one-state-rp-mod-apk-2.webp", "https://getmodsapk.com/storage/media/2025/8/one-state-rp-mod-apk-1.webp", "https://getmodsapk.com/storage/media/2025/8/one-state-rp-mod-apk-3.webp"]
+  "screenshots": ["images/One-state-rp.jpg", "images/One-state-rp-4.jpg", "images/One-state-rp-5.jpg", "images/One-state-rp-6.jpg"]
 }
 </script>
 
@@ -891,10 +1331,13 @@
 
     <header class="header">
         <nav class="nav-container">
-            <a href="#" class="logo"><i class="fas fa-gamepad"></i> OneState <span>RP</span></a>
+            <a href="#" class="logo">
+                <img src="images/One-state-rp-2.jpg" alt="OneState RP Logo" class="logo-img" width="46" height="46">
+                OneState <span>RP</span>
+            </a>
             <div class="nav-links">
                 <a href="#home">Home</a>
-                <a href="#screenshots">Screenshots</a>
+                <a href="#gallery">Gallery</a>
                 <a href="#features">Features</a>
                 <a href="#about">About</a>
                 <a href="https://redirectapps.online/cl/i/gr66jd" class="btn btn-primary"
@@ -936,6 +1379,45 @@
             </div>
         </section>
 
+        <!-- Profile Banner -->
+        <section style="padding: 0 2rem; max-width: 1200px; margin: 0 auto 2rem;">
+            <div class="profile-hero reveal">
+                <span class="profile-badge"><i class="fas fa-star" style="margin-right:6px;"></i>Featured</span>
+                <img
+                    src="images/One-state-rp-2.jpg"
+                    alt="One State RP – Featured Profile"
+                    class="profile-hero-img"
+                    loading="eager"
+                    width="1200"
+                    height="480"
+                    id="profile-hero-img"
+                    onclick="openProfileLightbox()"
+                    style="cursor:pointer;"
+                    title="Click to view full size"
+                >
+                <div class="profile-meta">
+                    <div class="profile-info">
+                        <h3>OneState RP — Official Mod Hub</h3>
+                        <p><i class="fas fa-map-marker-alt" style="color:var(--accent);margin-right:6px;"></i>Open World Roleplay &nbsp;|&nbsp; <i class="fas fa-users" style="color:var(--primary);margin-right:6px;"></i>Millions of Players</p>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="profile-stat">
+                            <span class="profile-stat-num">5M+</span>
+                            <span class="profile-stat-label">Downloads</span>
+                        </div>
+                        <div class="profile-stat">
+                            <span class="profile-stat-num">4.8★</span>
+                            <span class="profile-stat-label">Rating</span>
+                        </div>
+                        <div class="profile-stat">
+                            <span class="profile-stat-num">FREE</span>
+                            <span class="profile-stat-label">Access</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Version Info Stats Bar -->
         <section style="padding: 0 2rem 3rem; max-width: 1200px; margin: 0 auto;">
             <div class="glass-panel reveal" style="display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center; padding:2rem 3rem;">
@@ -966,28 +1448,72 @@
             </div>
         </section>
 
-        <!-- Screenshots Gallery -->
-        <section class="gallery-section" id="screenshots">
+        <!-- Game Gallery -->
+        <section class="gallery-section" id="gallery">
             <div class="section-header reveal">
-                <h2>Game <span class="text-accent">Screenshots</span></h2>
-                <p>See One State RP Mod in action Ã¢â‚¬â€ real gameplay screenshots from the latest version.</p>
+                <h2>Game <span class="text-accent">Gallery</span></h2>
+                <p>Real One State RP moments &mdash; click any photo to view full screen.</p>
                 <div class="line"></div>
             </div>
             <div class="gallery-grid" id="gallery-grid">
-                <div class="gallery-item reveal">
-                    <img class="gallery-img" src="https://getmodsapk.com/storage/media/2025/8/one-state-rp-mod-apk-2.webp" alt="One State RP Mod Screenshot 1" loading="lazy">
-                    <div class="gallery-overlay"><span class="gallery-caption">Open World City Life</span></div>
+
+                <!-- Featured large — top left -->
+                <div class="gallery-item feat reveal" onclick="openLightbox(0)">
+                    <img class="gallery-img" src="images/One-state-rp-5.jpg" alt="One State RP Epic Roleplay" loading="lazy" width="900" height="500">
+                    <span class="gallery-num">01</span>
+                    <span class="gallery-expand"><i class="fas fa-expand-alt"></i></span>
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag"><i class="fas fa-star" style="margin-right:5px;"></i>Featured</span>
+                        <span class="gallery-caption">Epic Roleplay Moments</span>
+                    </div>
                 </div>
-                <div class="gallery-item reveal">
-                    <img class="gallery-img" src="https://getmodsapk.com/storage/media/2025/8/one-state-rp-mod-apk-1.webp" alt="One State RP Mod Screenshot 2" loading="lazy">
-                    <div class="gallery-overlay"><span class="gallery-caption">Unlimited Money Mod</span></div>
+
+                <!-- Tall card — right, spans both rows -->
+                <div class="gallery-item tall reveal" onclick="openLightbox(1)">
+                    <img class="gallery-img" src="images/One-state-rp-4.jpg" alt="One State RP City Life" loading="lazy" width="600" height="800">
+                    <span class="gallery-num">02</span>
+                    <span class="gallery-expand"><i class="fas fa-expand-alt"></i></span>
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag"><i class="fas fa-city" style="margin-right:5px;"></i>City</span>
+                        <span class="gallery-caption">City Life &amp; Action</span>
+                    </div>
                 </div>
-                <div class="gallery-item reveal">
-                    <img class="gallery-img" src="https://getmodsapk.com/storage/media/2025/8/one-state-rp-mod-apk-3.webp" alt="One State RP Mod Screenshot 3" loading="lazy">
-                    <div class="gallery-overlay"><span class="gallery-caption">MOD Menu Active</span></div>
+
+                <!-- Bottom-left -->
+                <div class="gallery-item sm reveal" onclick="openLightbox(2)">
+                    <img class="gallery-img" src="images/One-state-rp-6.jpg" alt="One State RP Gang Missions" loading="lazy" width="600" height="400">
+                    <span class="gallery-num">03</span>
+                    <span class="gallery-expand"><i class="fas fa-expand-alt"></i></span>
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag"><i class="fas fa-users" style="margin-right:5px;"></i>Crew</span>
+                        <span class="gallery-caption">Gang &amp; Crew Missions</span>
+                    </div>
                 </div>
+
+                <!-- Bottom-right (hidden on small screens) -->
+                <div class="gallery-item sm reveal" onclick="openLightbox(3)">
+                    <img class="gallery-img" src="images/One-state-rp.jpg" alt="One State RP Open World" loading="lazy" width="600" height="400">
+                    <span class="gallery-num">04</span>
+                    <span class="gallery-expand"><i class="fas fa-expand-alt"></i></span>
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag"><i class="fas fa-globe" style="margin-right:5px;"></i>World</span>
+                        <span class="gallery-caption">Open World Exploration</span>
+                    </div>
+                </div>
+
             </div>
         </section>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+            <button class="lightbox-close" id="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightbox-prev" onclick="shiftLightbox(-1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-nav lightbox-next" id="lightbox-next" onclick="shiftLightbox(1)" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+            <div class="lightbox-content">
+                <img src="" alt="" class="lightbox-img" id="lightbox-img">
+                <span class="lightbox-caption" id="lightbox-caption"></span>
+            </div>
+        </div>
 
         <section class="seo-section reveal" id="about">
             <div class="seo-content glass-panel">
@@ -1065,7 +1591,7 @@
     </footer>
 
     <script>
-        // Ã¢â€â‚¬Ã¢â€â‚¬ Live Data Reader (auto-update.ps1 patches the JSON block) Ã¢â€â‚¬Ã¢â€â‚¬
+        // ── Live Data Reader (auto-update.ps1 patches the JSON block) ──
         (function() {
             try {
                 const raw = document.getElementById('live-data');
@@ -1086,19 +1612,7 @@
                 const statSize = document.getElementById('stat-size');
                 if (statSize && data.fileSize) statSize.previousElementSibling.textContent = data.fileSize;
 
-                // Gallery screenshots
-                if (data.screenshots && data.screenshots.length) {
-                    const grid = document.getElementById('gallery-grid');
-                    if (grid) {
-                        const captions = ['Open World City Life', 'Unlimited Money Mod', 'MOD Menu Active', 'Roleplay Action', 'Gang Management', 'Supercar Collection'];
-                        grid.innerHTML = data.screenshots.map((url, i) =>
-                            `<div class="gallery-item reveal active">
-                                <img class="gallery-img" src="${url}" alt="One State RP Mod Screenshot ${i+1}" loading="lazy">
-                                <div class="gallery-overlay"><span class="gallery-caption">${captions[i] || 'Screenshot ' + (i+1)}</span></div>
-                            </div>`
-                        ).join('');
-                    }
-                }
+                // Gallery screenshots — kept static (custom layout), do not auto-overwrite
 
                 // Page title update
                 if (data.version) {
@@ -1195,10 +1709,87 @@
             }
         }
 
+        // ── Lightbox ──────────────────────────────────────────────
+        const lightboxPhotos = [
+            { src: 'images/One-state-rp-5.jpg', caption: 'Epic Roleplay Moments' },
+            { src: 'images/One-state-rp-4.jpg', caption: 'City Life & Action' },
+            { src: 'images/One-state-rp-6.jpg', caption: 'Gang & Crew Missions' },
+            { src: 'images/One-state-rp.jpg',   caption: 'Open World Exploration' },
+        ];
+
+        let currentLightboxIdx = 0;
+
+        function openLightbox(idx) {
+            currentLightboxIdx = idx;
+            const lb     = document.getElementById('lightbox');
+            const lbImg  = document.getElementById('lightbox-img');
+            const lbCap  = document.getElementById('lightbox-caption');
+            const p = lightboxPhotos[idx];
+            lbImg.src = p.src;
+            lbImg.alt = p.caption;
+            lbCap.textContent = p.caption + '  (' + (idx + 1) + ' / ' + lightboxPhotos.length + ')';
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function closeLightboxOnBg(e) {
+            if (e.target === document.getElementById('lightbox')) closeLightbox();
+        }
+
+        function shiftLightbox(dir) {
+            currentLightboxIdx = (currentLightboxIdx + dir + lightboxPhotos.length) % lightboxPhotos.length;
+            openLightbox(currentLightboxIdx);
+        }
+
+        // Profile image full-screen lightbox
+        function openProfileLightbox() {
+            const lb    = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lightbox-img');
+            const lbCap = document.getElementById('lightbox-caption');
+            lbImg.src = 'images/One-state-rp-2.jpg';
+            lbImg.alt = 'OneState RP — Profile';
+            lbCap.textContent = 'OneState RP — Featured Profile';
+            // Temporarily disable the arrow nav for single-image view
+            document.getElementById('lightbox-prev').style.display = 'none';
+            document.getElementById('lightbox-next').style.display = 'none';
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Re-enable nav on close
+            lb.dataset.profileMode = '1';
+        }
+
+        // Patch closeLightbox to restore nav arrows
+        const _origClose = closeLightbox;
+        closeLightbox = function() {
+            const lb = document.getElementById('lightbox');
+            if (lb.dataset.profileMode) {
+                document.getElementById('lightbox-prev').style.display = '';
+                document.getElementById('lightbox-next').style.display = '';
+                delete lb.dataset.profileMode;
+            }
+            lb.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        document.addEventListener('keydown', function(e) {
+            const lb = document.getElementById('lightbox');
+            if (!lb.classList.contains('active')) return;
+            if (e.key === 'Escape')       closeLightbox();
+            if (e.key === 'ArrowRight')   shiftLightbox(1);
+            if (e.key === 'ArrowLeft')    shiftLightbox(-1);
+        });
+
     </script>
 </body>
 
 </html>
+
+
 
 
 

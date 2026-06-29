@@ -142,3 +142,50 @@
 [2026-06-25 14:17:03] index.html updated successfully!
 [2026-06-25 14:17:03] === Auto-Update Complete. Version: v1.1.1 | Updated: June 12, 2026 ===
 [2026-06-25 14:17:03] 
+[2026-06-27 15:27:46] === OneState RP Mod Auto-Update Started ===
+[2026-06-27 15:27:47] Page downloaded successfully ( bytes)
+[2026-06-27 15:27:47] Version found: v1.1.1
+[2026-06-27 15:27:47] Description found: A life simulator where you are free to do whatever you like without any restriction. Welcome to the various maps and activities of one state rp mod apk with unlimited money and diamonds.
+[2026-06-27 15:27:48] Thumbnail: https://getmodsapk.com/storage/media/2025/12/onestate-rp-mod-apk.webp
+[2026-06-27 15:27:48] Screenshots found: 3
+[2026-06-27 15:27:48] Last updated: juin 12, 2026
+[2026-06-27 15:27:48] File size: 125 MB
+[2026-06-27 15:27:48] index.html loaded ( bytes)
+[2026-06-27 15:27:48] index.html updated successfully!
+[2026-06-27 15:27:48] === Auto-Update Complete. Version: v1.1.1 | Updated: juin 12, 2026 ===
+[2026-06-27 15:27:48] 
+[2026-06-28 15:45:47] === OneState RP Mod Auto-Update Started ===
+[2026-06-28 15:45:49] Page downloaded successfully ( bytes)
+[2026-06-28 15:45:49] Version found: v1.1.1
+[2026-06-28 15:45:49] Description found: A life simulator where you are free to do whatever you like without any restriction. Welcome to the various maps and activities of one state rp mod apk with unlimited money and diamonds.
+[2026-06-28 15:45:49] Thumbnail: https://getmodsapk.com/storage/media/2025/12/onestate-rp-mod-apk.webp
+[2026-06-28 15:45:49] Screenshots found: 3
+[2026-06-28 15:45:49] Last updated: juin 12, 2026
+[2026-06-28 15:45:49] File size: 125 MB
+[2026-06-28 15:45:49] index.html loaded ( bytes)
+[2026-06-28 15:45:49] index.html updated successfully!
+[2026-06-28 15:45:49] === Auto-Update Complete. Version: v1.1.1 | Updated: juin 12, 2026 ===
+[2026-06-28 15:45:49] 
+[2026-06-29 00:28:17] === PowerShell Auto-Update Wrapper Started ===
+[2026-06-29 00:28:17] [2026-06-28 23:28:17] === OneState RP Mod Auto-Update Started ===
+[2026-06-29 00:28:17] C:\Users\PC\Documents\Onestaterp\update.py:27: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+[2026-06-29 00:28:17]   ts = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+[2026-06-29 00:28:18] [2026-06-28 23:28:18] Page downloaded successfully (125783 bytes)
+[2026-06-29 00:28:18] [2026-06-28 23:28:18] Version found: v1.1.1
+[2026-06-29 00:28:18] [2026-06-28 23:28:18] Description found: A life simulator where you are free to do whatever you like without any restrict...
+[2026-06-29 00:28:18] [2026-06-28 23:28:18] Thumbnail: https://getmodsapk.com/storage/media/2025/12/onestate-rp-mod-apk.webp
+[2026-06-29 00:28:18] [2026-06-28 23:28:18] Screenshots found: 3
+[2026-06-29 00:28:18] [2026-06-28 23:28:18] Downloading/converting image from https://getmodsapk.com/storage/media/2025/12/onestate-rp-mod-apk.webp...
+[2026-06-29 00:28:18] [2026-06-28 23:28:18] Saved and converted to: images/thumbnail.jpg
+[2026-06-29 00:28:18] [2026-06-28 23:28:18] Downloading/converting image from https://getmodsapk.com/storage/media/2025/8/one-state-rp-mod-apk-2.webp...
+[2026-06-29 00:28:19] [2026-06-28 23:28:19] Saved and converted to: images/screenshot_1.jpg
+[2026-06-29 00:28:19] [2026-06-28 23:28:19] Downloading/converting image from https://getmodsapk.com/storage/media/2025/8/one-state-rp-mod-apk-1.webp...
+[2026-06-29 00:28:20] [2026-06-28 23:28:20] Saved and converted to: images/screenshot_2.jpg
+[2026-06-29 00:28:20] [2026-06-28 23:28:20] Downloading/converting image from https://getmodsapk.com/storage/media/2025/8/one-state-rp-mod-apk-3.webp...
+[2026-06-29 00:28:21] [2026-06-28 23:28:21] Saved and converted to: images/screenshot_3.jpg
+[2026-06-29 00:28:21] [2026-06-28 23:28:21] Last updated: June 12, 2026
+[2026-06-29 00:28:21] [2026-06-28 23:28:21] File size: 125 MB
+[2026-06-29 00:28:21] [2026-06-28 23:28:21] index.html loaded (42401 bytes)
+[2026-06-29 00:28:21] [2026-06-28 23:28:21] index.html updated successfully!
+[2026-06-29 00:28:21] [2026-06-28 23:28:21] === Auto-Update Complete. Version: v1.1.1 | Updated: June 12, 2026 ===
+[2026-06-29 00:28:21] === PowerShell Auto-Update Wrapper Finished ===
