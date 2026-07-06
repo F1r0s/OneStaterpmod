@@ -80,6 +80,10 @@
             scroll-behavior: smooth;
         }
 
+        a, button, input, .btn, .mobile-menu-btn {
+            touch-action: manipulation;
+        }
+
         body {
             font-family: 'Outfit', 'Inter', sans-serif;
             background-color: var(--bg-dark);
@@ -1626,22 +1630,26 @@
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) header.classList.add('scrolled');
             else header.classList.remove('scrolled');
-        });
+        }, { passive: true });
 
         // --- Mobile Menu Toggle ---
         const menuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
 
         menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuBtn.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            requestAnimationFrame(() => {
+                navLinks.classList.toggle('active');
+                menuBtn.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
         });
 
         // Close menu when link clicked
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                requestAnimationFrame(() => {
+                    navLinks.classList.remove('active');
+                    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                });
             });
         });
 
@@ -1720,21 +1728,25 @@
         let currentLightboxIdx = 0;
 
         function openLightbox(idx) {
-            currentLightboxIdx = idx;
-            const lb     = document.getElementById('lightbox');
-            const lbImg  = document.getElementById('lightbox-img');
-            const lbCap  = document.getElementById('lightbox-caption');
-            const p = lightboxPhotos[idx];
-            lbImg.src = p.src;
-            lbImg.alt = p.caption;
-            lbCap.textContent = p.caption + '  (' + (idx + 1) + ' / ' + lightboxPhotos.length + ')';
-            lb.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            requestAnimationFrame(() => {
+                currentLightboxIdx = idx;
+                const lb     = document.getElementById('lightbox');
+                const lbImg  = document.getElementById('lightbox-img');
+                const lbCap  = document.getElementById('lightbox-caption');
+                const p = lightboxPhotos[idx];
+                lbImg.src = p.src;
+                lbImg.alt = p.caption;
+                lbCap.textContent = p.caption + '  (' + (idx + 1) + ' / ' + lightboxPhotos.length + ')';
+                lb.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
         }
 
         function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-            document.body.style.overflow = '';
+            requestAnimationFrame(() => {
+                document.getElementById('lightbox').classList.remove('active');
+                document.body.style.overflow = '';
+            });
         }
 
         function closeLightboxOnBg(e) {
@@ -1766,14 +1778,16 @@
         // Patch closeLightbox to restore nav arrows
         const _origClose = closeLightbox;
         closeLightbox = function() {
-            const lb = document.getElementById('lightbox');
-            if (lb.dataset.profileMode) {
-                document.getElementById('lightbox-prev').style.display = '';
-                document.getElementById('lightbox-next').style.display = '';
-                delete lb.dataset.profileMode;
-            }
-            lb.classList.remove('active');
-            document.body.style.overflow = '';
+            requestAnimationFrame(() => {
+                const lb = document.getElementById('lightbox');
+                if (lb.dataset.profileMode) {
+                    document.getElementById('lightbox-prev').style.display = '';
+                    document.getElementById('lightbox-next').style.display = '';
+                    delete lb.dataset.profileMode;
+                }
+                lb.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         };
 
         document.addEventListener('keydown', function(e) {
