@@ -189,3 +189,7 @@
 [2026-06-29 00:28:21] [2026-06-28 23:28:21] index.html updated successfully!
 [2026-06-29 00:28:21] [2026-06-28 23:28:21] === Auto-Update Complete. Version: v1.1.1 | Updated: June 12, 2026 ===
 [2026-06-29 00:28:21] === PowerShell Auto-Update Wrapper Finished ===
+[2026-07-22 21:35:49] === PowerShell Auto-Update Wrapper Started ===
+[2026-07-22 21:35:55] ERROR: Execution failed - Le terme « python » n'est pas reconnu comme nom d'applet de commande, fonction, fichier de script ou programme exécutable. Vérifiez l'orthographe du nom, ou si un chemin d'accès existe, vérifiez que le chemin d'accès est correct et réessayez.
+[2026-07-23 21:18:46] === PowerShell Auto-Update Wrapper Started ===
+[2026-07-23 21:18:52] ERROR: Execution failed - Le terme « python » n'est pas reconnu comme nom d'applet de commande, fonction, fichier de script ou programme exécutable. Vérifiez l'orthographe du nom, ou si un chemin d'accès existe, vérifiez que le chemin d'accès est correct et réessayez.

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features – One State RP Mod | Hack One State &amp; One State Hacks</title>
+    <meta name="description" content="Explore all God-Tier features of the One State RP Mod. Get hack one state, one state hacks, one state hack, hack onestate, hacker coins hack, and god mode." />
+    <meta name="keywords" content="hack one state, one state hacks, one state hack, hack onestate, one state rp mod, one state rp hack, onestate hack, one state mod, one state rp mod apk, onestate apk, hacker coins hack, god mode, one state rp pc" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="shortcut icon" href="images/favicon-32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #f5c518;
+            --primary-dark: #b8860b;
+            --accent: #ff0055;
+            --bg-dark: #020200;
+            --bg-card: rgba(15, 12, 0, 0.65);
+            --glass-border: rgba(245, 197, 24, 0.12);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --shadow-soft: 0 15px 50px -10px rgba(0, 0, 0, 0.9);
+            --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        a, button, input, .btn, .mobile-menu-btn { touch-action: manipulation; }
+
+        body {
+            font-family: 'Outfit', 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Ambient BG */
+        .ambient-bg {
+            position: fixed; top: 0; left: 0;
+            width: 100vw; height: 100vh; z-index: -2;
+            background:
+                radial-gradient(circle at top left,  rgba(245,197,24,0.07) 0%, transparent 40%),
+                radial-gradient(circle at bottom right, rgba(255,0,85,0.05) 0%, transparent 40%);
+            animation: breatheBg 15s ease-in-out infinite alternate;
+        }
+
+        @keyframes breatheBg {
+            0%   { transform: scale(1);   opacity: 0.8; }
+            100% { transform: scale(1.1); opacity: 1;   }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes textShimmer {
+            0%   { background-position: -200% center; }
+            100% { background-position:  200% center; }
+        }
+
+        /* Header */
+        .header {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            padding: 1.2rem 0; transition: var(--transition);
+        }
+        .header.scrolled {
+            background: rgba(2,2,0,0.9);
+            backdrop-filter: blur(15px);
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(245,197,24,0.08);
+        }
+        .nav-container {
+            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo {
+            font-family: 'Bebas Neue', sans-serif; font-size: 2rem;
+            letter-spacing: 1px; color: #fff; display: flex;
+            align-items: center; gap: 12px; text-decoration: none;
+        }
+        .logo img.logo-img {
+            width: 46px; height: 46px; border-radius: 50%; object-fit: cover;
+            border: 2px solid rgba(245,197,24,0.6);
+            box-shadow: 0 0 14px rgba(245,197,24,0.4);
+            transition: transform 0.35s ease; flex-shrink: 0;
+        }
+        .logo:hover img.logo-img { transform: scale(1.1) rotate(3deg); }
+        .logo span { color: var(--primary); }
+
+        .nav-links {
+            display: flex; gap: 3rem; align-items: center;
+        }
+        .nav-links a {
+            color: var(--text-muted); text-decoration: none;
+            font-weight: 600; font-size: 0.95rem;
+            transition: var(--transition); position: relative;
+        }
+        .nav-links a:hover { color: #fff; }
+        .nav-links a.active { color: var(--primary); }
+        .nav-links a::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -6px; left: 50%; background: var(--primary);
+            transition: all 0.3s ease; transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(245,197,24,0.5);
+        }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+        .mobile-menu-btn {
+            display: none; font-size: 1.8rem; color: #fff; cursor: pointer;
+        }
+        .mobile-menu-btn:hover { color: var(--primary); }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            gap: 12px; padding: 14px 38px; border-radius: 50px; font-weight: 700;
+            text-decoration: none; transition: var(--transition); cursor: pointer;
+            text-transform: uppercase; letter-spacing: 1px; font-size: 0.95rem;
+            position: relative; overflow: hidden; z-index: 1;
+        }
+        .btn::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s ease; z-index: -1;
+        }
+        .btn:hover::before { left: 100%; }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: #0a0800;
+            box-shadow: 0 4px 20px rgba(245,197,24,0.35);
+            border: 1px solid rgba(245,197,24,0.4);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(245,197,24,0.6);
+            color: #0a0800;
+        }
+
+        /* Glass */
+        .glass-panel {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-soft);
+            border-radius: 20px;
+        }
+
+        /* Text */
+        .text-gradient {
+            background: linear-gradient(to right, var(--primary), #fffbe6);
+            background-clip: text; -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; display: inline-block;
+        }
+        .text-accent { color: var(--accent); }
+        .mod-highlight {
+            color: var(--primary); font-weight: bold;
+            text-shadow: 0 0 8px rgba(245,197,24,0.4);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 160px 2rem 5rem;
+            text-align: center;
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .page-hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 8px 20px;
+            background: rgba(245,197,24,0.1);
+            color: var(--primary); border-radius: 30px;
+            font-size: 0.85rem; font-weight: 700; margin-bottom: 2rem;
+            border: 1px solid rgba(245,197,24,0.35);
+            text-transform: uppercase; letter-spacing: 2px;
+            animation: fadeInUp 0.8s ease both;
+        }
+        .page-hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5.5rem; line-height: 1;
+            margin-bottom: 1.5rem; letter-spacing: 3px;
+            animation: fadeInUp 0.8s 0.1s ease both;
+        }
+        .page-hero p {
+            font-size: 1.2rem; color: var(--text-muted);
+            max-width: 600px; margin: 0 auto 2rem; font-weight: 300;
+            animation: fadeInUp 0.8s 0.2s ease both;
+        }
+        .page-hero-line {
+            width: 80px; height: 5px;
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+            margin: 0 auto 3rem; border-radius: 5px;
+            box-shadow: 0 0 12px rgba(245,197,24,0.4);
+            animation: fadeInUp 0.8s 0.25s ease both;
+        }
+
+        /* Features Grid */
+        .features-section {
+            padding: 0 2rem 8rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        .feature-card {
+            padding: 3rem 2.5rem;
+            transition: all 0.4s ease;
+            position: relative; text-align: left; z-index: 1; overflow: hidden;
+            animation: fadeInUp 0.7s ease both;
+        }
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .feature-card::after {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at top right, rgba(245,197,24,0.1), transparent 70%);
+            opacity: 0; transition: opacity 0.4s ease; z-index: -1;
+        }
+        .feature-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(245,197,24,0.35);
+            box-shadow: 0 0 28px rgba(245,197,24,0.25);
+        }
+        .feature-card:hover::after { opacity: 1; }
+
+        .feature-icon-wrapper {
+            width: 70px; height: 70px;
+            background: rgba(10,8,0,0.85);
+            border: 1px solid rgba(245,197,24,0.25);
+            border-radius: 18px; display: flex;
+            align-items: center; justify-content: center;
+            margin-bottom: 2rem; color: var(--primary);
+            font-size: 2rem; transition: all 0.4s ease;
+            box-shadow: inset 0 0 15px rgba(245,197,24,0.1);
+        }
+        .feature-card:hover .feature-icon-wrapper {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: inset 0 0 25px rgba(245,197,24,0.3);
+            border-color: var(--primary);
+        }
+        .feature-card h3 {
+            font-size: 1.5rem; margin-bottom: 1rem;
+            color: #fff; font-weight: 800;
+        }
+        .feature-card p {
+            color: var(--text-muted); font-size: 1rem; line-height: 1.7;
+        }
+
+        /* CTA strip */
+        .cta-strip {
+            text-align: center;
+            padding: 5rem 2rem 8rem;
+        }
+        .cta-strip h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem; letter-spacing: 2px; margin-bottom: 1rem;
+        }
+        .cta-strip p {
+            color: var(--text-muted); font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* ── Animated SEO Footer Banner ─────────────────────── */
+        .seo-footer-banner {
+            max-width: 1100px;
+            margin: 4rem auto 2rem;
+            padding: 3rem 2.5rem;
+            background: linear-gradient(135deg, rgba(15,12,0,0.85) 0%, rgba(35,28,0,0.7) 50%, rgba(15,12,0,0.85) 100%);
+            border: 1px solid rgba(245, 197, 24, 0.3);
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(245,197,24,0.15);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .seo-footer-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff0055, #f5c518, #00ff88, #00e5ff, #ff0055);
+            background-size: 300% 100%;
+            animation: textShimmer 4s linear infinite;
+        }
+
+        .seo-banner-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #f5c518 0%, #ffffff 50%, #f5c518 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShimmer 4s linear infinite;
+        }
+
+        .seo-keyword-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 2rem 0;
+        }
+
+        .seo-kw-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(245,197,24,0.25);
+            transition: all 0.35s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .seo-kw-pill:nth-child(1) { border-color: rgba(245,197,24,0.5); color: #f5c518; }
+        .seo-kw-pill:nth-child(2) { border-color: rgba(0,255,136,0.5); color: #00ff88; }
+        .seo-kw-pill:nth-child(3) { border-color: rgba(255,0,85,0.5); color: #ff0055; }
+        .seo-kw-pill:nth-child(4) { border-color: rgba(0,229,255,0.5); color: #00e5ff; }
+        .seo-kw-pill:nth-child(5) { border-color: rgba(167,139,250,0.5); color: #a78bfa; }
+        .seo-kw-pill:nth-child(6) { border-color: rgba(255,153,0,0.5); color: #ff9900; }
+        .seo-kw-pill:nth-child(7) { border-color: rgba(245,197,24,0.5); color: #f5c518; }
+        .seo-kw-pill:nth-child(8) { border-color: rgba(0,255,136,0.5); color: #00ff88; }
+        .seo-kw-pill:nth-child(9) { border-color: rgba(255,0,85,0.5); color: #ff0055; }
+
+        .seo-kw-pill:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(245,197,24,0.3);
+            background: rgba(245,197,24,0.15);
+            color: #fff;
+        }
+
+        .footer-copyright-vivid {
+            margin-top: 2rem;
+            padding: 1.5rem 2rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(245,197,24,0.12);
+            border-radius: 16px;
+            max-width: 850px;
+            margin: 2rem auto 0;
+        }
+
+        .footer-copyright-vivid p {
+            color: var(--text-main);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        .footer-kw-highlight { color: #f5c518; font-weight: 700; text-shadow: 0 0 10px rgba(245,197,24,0.4); }
+        .footer-kw-highlight-pink { color: #ff0055; font-weight: 700; text-shadow: 0 0 10px rgba(255,0,85,0.4); }
+        .footer-kw-highlight-green { color: #00ff88; font-weight: 700; text-shadow: 0 0 10px rgba(0,255,136,0.4); }
+
+        /* Footer */
+        footer {
+            background: #010100; padding: 4rem 2rem 2.5rem;
+            text-align: center; border-top: 1px solid rgba(245,197,24,0.08);
+            position: relative; overflow: hidden;
+        }
+        footer::before {
+            content: ''; position: absolute; top: 0; left: 50%;
+            transform: translateX(-50%); width: 50%; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            box-shadow: 0 0 20px rgba(245,197,24,0.6);
+        }
+        .footer-logo {
+            font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem;
+            letter-spacing: 3px; color: #fff; margin-bottom: 1.5rem; display: block;
+        }
+        .footer-logo span { color: var(--primary); }
+        .footer-nav {
+            margin-bottom: 2rem; display: flex;
+            justify-content: center; gap: 2rem; flex-wrap: wrap;
+        }
+        .footer-nav a {
+            color: var(--text-muted); text-decoration: none;
+            font-weight: 600; text-transform: uppercase;
+            font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s;
+        }
+        .footer-nav a:hover { color: var(--primary); }
+        .copyright { color: #475569; font-size: 0.85rem; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .page-hero h1 { font-size: 3.5rem; }
+            .btn { width: 100%; max-width: 300px; }
+        }
+        @media (max-width: 768px) {
+            .header { padding: 1rem 0; }
+            .nav-links {
+                position: fixed; top: 0; right: -100%; height: 100vh; width: 85%;
+                background: rgba(2,2,0,0.98); backdrop-filter: blur(25px);
+                flex-direction: column; justify-content: center; gap: 2.5rem;
+                transition: 0.5s cubic-bezier(0.25,1,0.5,1);
+                box-shadow: -10px 0 50px rgba(0,0,0,0.8);
+                border-left: 1px solid rgba(245,197,24,0.08); z-index: 1500;
+            }
+            .nav-links.active { right: 0; }
+            .nav-links a { font-size: 1.2rem; }
+            .mobile-menu-btn { display: block; z-index: 1600; }
+            .page-hero { padding: 140px 1.5rem 3rem; }
+            .page-hero h1 { font-size: 3rem; }
+        }
+        @media (max-width: 480px) {
+            .features-grid { grid-template-columns: 1fr; }
+            .page-hero h1 { font-size: 2.6rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ambient-bg"></div>
+
+    <header class="header" id="siteHeader">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/One-state-rp-2.jpg" alt="OneState RP Logo" class="logo-img" width="46" height="46">
+                OneState <span>RP</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="features.html" class="active">Features</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="https://redirectapps.online/cl/i/gr66jd" class="btn btn-primary"
+                    style="padding: 10px 24px; font-size: 0.85rem; width: auto; color: #0a0800;">Get Mod</a>
+            </div>
+            <div class="mobile-menu-btn" id="menuBtn"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Hero -->
+        <div class="page-hero">
+            <div class="page-hero-badge"><i class="fas fa-bolt text-accent"></i> God-Tier Capabilities</div>
+            <h1 class="text-gradient">Features</h1>
+            <p>Everything you need to fully dominate <strong style="color:#fff;">One State RP</strong>. Unlock powers that standard players can only dream of.</p>
+            <div class="page-hero-line"></div>
+        </div>
+
+        <!-- Features Grid -->
+        <section class="features-section">
+            <div class="features-grid">
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon-wrapper"><i class="fas fa-coins"></i></div>
+                    <h3>Hacker Coins Hack</h3>
+                    <p>Activate the highly sought-after <span class="mod-highlight">one state rp hacker coins hack</span>. Generate unlimited currency to buy mansions, supercars, and businesses without spending a single dime.</p>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon-wrapper" style="color:var(--accent); border-color:rgba(255,0,85,0.25);"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Onestate APK Optimized</h3>
+                    <p>Designed natively for mobile. The <span class="mod-highlight">onestate apk</span> is fully responsive with an integrated dark mode mod menu that prevents device overheating during long sessions.</p>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon-wrapper" style="color:#00ff88; border-color:rgba(0,255,136,0.2);"><i class="fas fa-desktop"></i></div>
+                    <h3>One State RP PC Support</h3>
+                    <p>Prefer a keyboard and mouse? Our <span class="mod-highlight">mod</span> seamlessly ports over to <strong style="color:#fff;">one state rp pc</strong> emulators, delivering HD 4K textures and uncapped frame rates.</p>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon-wrapper"><i class="fas fa-bolt"></i></div>
+                    <h3>God Mode Attributes</h3>
+                    <p>Infinite stamina, unlimited oxygen, and an impenetrable health bar. Complete and absolute dominance over every standard <strong style="color:#fff;">onestate</strong> roleplay parameter in the game.</p>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon-wrapper" style="color:var(--accent); border-color:rgba(255,0,85,0.25);"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Anti-Ban Protection</h3>
+                    <p>Our advanced encryption layer keeps your account completely safe. Play the <span class="mod-highlight">one state rp mod</span> with zero risk of detection or account suspension — guaranteed.</p>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon-wrapper"><i class="fas fa-car"></i></div>
+                    <h3>Unlocked Vehicles &amp; Weapons</h3>
+                    <p>Access every supercar, weapon, and property from day one. Dominate every district with exclusive items not available in the standard <strong style="color:#fff;">onestate</strong> edition.</p>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon-wrapper" style="color:#a78bfa; border-color:rgba(167,139,250,0.2);"><i class="fas fa-user-secret"></i></div>
+                    <h3>Invisible Mode</h3>
+                    <p>Activate stealth and move through the city completely undetected. Rival players and police AI cannot locate or target you while invisible mode is active.</p>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon-wrapper" style="color:#00ff88; border-color:rgba(0,255,136,0.2);"><i class="fas fa-tachometer-alt"></i></div>
+                    <h3>Speed Boost &amp; No Clip</h3>
+                    <p>Move at superhuman speed and phase through any obstacle with no-clip mode. Travel across the entire map in seconds with unmatched mobility controls.</p>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon-wrapper"><i class="fas fa-download"></i></div>
+                    <h3>Fast &amp; Safe Install</h3>
+                    <p>Download the <span class="mod-highlight">onestate apk</span> in seconds. Our installer requires no root access, works on all Android versions, and removes itself cleanly after setup.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-strip">
+            <h2>Ready to <span class="text-gradient">Dominate?</span></h2>
+            <p>All features are free. Download the mod now and take full control.</p>
+            <a href="https://redirectapps.online/cl/i/gr66jd" class="btn btn-primary">
+                <i class="fas fa-download"></i> Download Onestate APK
+            </a>
+        </section>
+        <!-- Animated Vibrant SEO Keywords Section -->
+        <section class="seo-footer-banner">
+            <h3 class="seo-banner-title"><i class="fas fa-bolt" style="margin-right:10px; color:#ff0055;"></i> Ultimate One State Hacks &amp; Features</h3>
+            <div class="seo-keyword-grid">
+                <a href="https://redirectapps.online/cl/i/gr66jd" class="seo-kw-pill"><i class="fas fa-bolt"></i> hack one state</a>
+                <a href="https://redirectapps.online/cl/i/gr66jd" class="seo-kw-pill"><i class="fas fa-fire"></i> one state hacks</a>
+                <a href="https://redirectapps.online/cl/i/gr66jd" class="seo-kw-pill"><i class="fas fa-shield-alt"></i> one state hack</a>
+                <a href="https://redirectapps.online/cl/i/gr66jd" class="seo-kw-pill"><i class="fas fa-download"></i> hack onestate</a>
+                <a href="https://redirectapps.online/cl/i/gr66jd" class="seo-kw-pill"><i class="fas fa-crown"></i> one state rp mod</a>
+                <a href="https://redirectapps.online/cl/i/gr66jd" class="seo-kw-pill"><i class="fas fa-coins"></i> one state rp hack</a>
+                <a href="https://redirectapps.online/cl/i/gr66jd" class="seo-kw-pill"><i class="fas fa-unlock"></i> onestate hack</a>
+                <a href="https://redirectapps.online/cl/i/gr66jd" class="seo-kw-pill"><i class="fas fa-star"></i> one state mod</a>
+                <a href="https://redirectapps.online/cl/i/gr66jd" class="seo-kw-pill"><i class="fas fa-gem"></i> one state rp mod apk</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span class="footer-logo">OneState <span>ModHub</span></span>
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="https://redirectapps.online/cl/i/gr66jd">Download APK</a>
+        </nav>
+        <div class="footer-copyright-vivid">
+            <p>
+                &copy; 2026 Official <span class="footer-kw-highlight">One State RP Mod</span>. Access top-rated <span class="footer-kw-highlight-green">hack one state</span> &amp; <span class="footer-kw-highlight-pink">onestate hack</span> features.
+            </p>
+            <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.65;">
+                Disclaimer: This site provides access to the verified one state rp mod apk. We are not officially affiliated with One State.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll
+        const header = document.getElementById('siteHeader');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        }, { passive: true });
+
+        // Mobile menu
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.innerHTML = navLinks.classList.contains('active')
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+    </script>
+</body>
+</html>
