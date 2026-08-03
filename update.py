@@ -24,7 +24,7 @@ IMAGES_DIR  = SCRIPT_DIR / "images"
 IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 
 def log(msg: str):
-    ts = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+    ts = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
     print(f"[{ts}] {msg}", flush=True)
 
 def download_and_convert_to_jpg(url: str, filename: str) -> str:
@@ -147,7 +147,7 @@ if m:
     last_updated = parsed.strftime("%B %d, %Y")
     log(f"Last updated: {last_updated}")
 else:
-    last_updated = datetime.datetime.utcnow().strftime("%B %d, %Y")
+    last_updated = datetime.datetime.now(datetime.timezone.utc).strftime("%B %d, %Y")
     log("Last updated (today's date used)")
 
 # ── 7. Extract File Size ──────────────────────────────────────────────────────
